@@ -1,4 +1,4 @@
-# import login as login
+﻿# import login as login
 from flask_login import logout_user, login_user, current_user
 from app import app, dao, login, utils
 from flask import render_template, request, session, redirect, url_for, jsonify
@@ -8,7 +8,7 @@ from app.models import *
 
 
 
-@app.route('/api/cart', methods=['POST'])
+@app.route('/api/cartshop', methods=['POST'])
 def add_cart():
     cart = session.get('cart')
     if cart is None:
