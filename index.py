@@ -87,15 +87,7 @@ def buy():
 
 
 
-@app.route('/')
-def index():
-    kw = request.args.get('kw')
-    products = dao.load_product(kw)
-    categories = dao.load_category()
-    if current_user.is_authenticated and current_user.user_role == UserRoleEnum.SHOP:
-        return render_template('shop.html', products=products, categories=categories)
-    else:
-        return render_template('home.html', products=products, categories=categories)
+
 
 
 @app.route('/shop')
