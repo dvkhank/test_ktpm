@@ -5,14 +5,7 @@ from flask import render_template, request, session, redirect, url_for, jsonify
 from app.models import *
 
 
-@app.context_processor
-def common_response():
-    cart = session.get('cart')
-    if cart is None:
-        cart = {}
-    return {
-        'cart_static': utils.count_cart(cart)
-    }
+
 
 
 @app.route('/api/cart', methods=['POST'])
