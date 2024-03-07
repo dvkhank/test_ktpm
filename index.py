@@ -84,14 +84,7 @@ def buy():
     })
 
 
-@app.route('/api/reply', methods=['post'])
-def rend_reply():
-    review_id = request.args.get('review')
-    product_id = request.args.get('product_id')
-    content = request.form.get('content')
-    dao.create_reply(review_id, content)
 
-    return redirect(url_for('product_detail', product_id=product_id))
 
 
 @app.route('/')
