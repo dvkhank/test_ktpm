@@ -8,7 +8,7 @@ from app.models import *
 
 
 
-@app.route('/api/cart', methods=['POST'])
+
 def add_cart():
     cart = session.get('cart')
     if cart is None:
